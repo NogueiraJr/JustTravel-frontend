@@ -1,0 +1,60 @@
+.ticket-details {
+  padding: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-details__image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.ticket-details__info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ticket-details__title {
+  font-size: 2rem;
+  color: #2b3a42;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.ticket-details__description {
+  font-size: 1.1rem;
+  color: #5c6b73;
+  line-height: 1.6;
+}
+
+.ticket-details__city {
+  font-size: 1rem;
+  color: #00796b;
+  font-weight: 600;
+}
+
+.ticket-details__price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ff6f61;
+}
+
+.ticket-details__rating {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5c6b73;
+}
+
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}

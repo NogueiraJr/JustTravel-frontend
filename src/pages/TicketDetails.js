@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import { GET_TICKET_BY_ID } from '../graphql/queries';
+import '../style/TicketDetails.css';
 
 const TicketDetails = () => {
   const { id } = useParams();
@@ -9,19 +10,29 @@ const TicketDetails = () => {
     variables: { id },
   });
 
-  if (loading) return <p>Carregando...</p>;
-  if (error) return <p>Erro: {error.message}</p>;
+  if (loading) return <p className="loading">Carregando...</p>;
+  if (error) return <p className="error">Erro: {error.message}</p>;
 
   const { ticketById } = data;
 
   return (
     <div className="ticket-details">
-      <img src={ticketById.imageUrl} alt={ticketById.name} />
-      <h2>{ticketById.name}</h2>
-      <p>{ticketById.description}</p>
-      <p>Cidade: {ticketById.city}</p>
-      <p>Preço: R$ {ticketById.price.toFixed(2)}</p>
-      <p>Avaliação: {ticketById.rating}</p>
+      <img
+        className="ticket-details__image"
+        src={ticketById.imageUrl}
+        alt={ticketById.name}
+      />
+      <div className="ticket-details__info">
+        <h2 className="ticket-details__title">{ticketById.name}</h2>
+        <p className="ticket-details__description">{ticketById.description}</p>
+        <p className="ticket-details__city">Cidade: {ticketById.city}</p>
+        <p className="ticket-details__price">
+          Preço: R$ {ticketById.price.toFixed(2)}
+        </p>
+        <p className="ticket-details__rating">
+          Avaliação: {ticketById.rating}
+        </p>
+      </div>
     </div>
   );
 };
